@@ -13,6 +13,6 @@ public class TestManagerReporter extends TestManagerAPIAdapter {
 
     @Override
     public String getBase64Image() {
-        return  ((TakesScreenshot) DriverManager.getDriverInstance()).getScreenshotAs(OutputType.BASE64);
+        return ((TakesScreenshot) DriverManager.getDriverInstance()).getScreenshotAs(OutputType.BASE64);
     }
 }

@@ -13,7 +13,7 @@ public class CucumberReporter extends ExtentCucumberGenericAdapter {
 
     @Override
     public String getScreenshotBase64() {
-        return  ((TakesScreenshot) DriverManager.getDriverInstance()).getScreenshotAs(OutputType.BASE64);
+        return ((TakesScreenshot) DriverManager.getDriverInstance()).getScreenshotAs(OutputType.BASE64);
     }
 
     @Override
