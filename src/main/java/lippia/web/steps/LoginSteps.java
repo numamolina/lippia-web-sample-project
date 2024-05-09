@@ -34,7 +34,7 @@ public class LoginSteps extends PageSteps {
         HomeService.verifyFormIsDisplayed();
         }
 
-
+//
 //
 //    @When("^hago clic en el boton 'Iniciar sesión'$")
 //    public void click() {
