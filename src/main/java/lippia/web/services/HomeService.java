@@ -22,17 +22,34 @@ public class HomeService extends ActionManager {
         click(LoginConstants.LOGIN_LINK);
     }
 
-    public static void inicioManual() {
-        click(LoginConstants.LOGIN_MANUAL_BUTTON);
-    }
-
     public static void verifyFormIsDisplayed() {
         WebActionManager.waitPresence(LoginConstants.LOGIN_MANUAL_BUTTON);
     }
 
+    public static void inicioManual() {
+        click(LoginConstants.LOGIN_MANUAL_BUTTON);
+    }
 
-//    public static void clickSearchButton() {
-//        click(LoginConstants.SEARCH_BUTTON);
-//    }
+    public static void verifyFormManually() {
+        WebActionManager.waitPresence(LoginConstants.INPUT_EMAIL);
+        WebActionManager.waitPresence(LoginConstants.INPUT_PASS);
+    }
+
+    public static void userInput(String text) {
+        setInput(LoginConstants.INPUT_EMAIL, text);
+    }
+
+    public static void passInput(String text) {
+        setInput(LoginConstants.INPUT_PASS, text);
+    }
+
+    public static void formLoginButton() {
+        click(LoginConstants.LOGIN_IN_BUTTON);
+    }
+
+    public static void dashboardPage() {
+        WebActionManager.waitPresence(LoginConstants.INPUT_EMAIL);
+    }
+
 
 }
