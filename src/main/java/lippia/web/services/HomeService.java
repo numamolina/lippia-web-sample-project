@@ -7,10 +7,6 @@ import lippia.web.constants.LoginConstants;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 
 public class HomeService extends ActionManager {
 
@@ -47,9 +43,20 @@ public class HomeService extends ActionManager {
         click(LoginConstants.LOGIN_IN_BUTTON);
     }
 
-    public static void dashboardPage() {
-        WebActionManager.waitPresence(LoginConstants.INPUT_EMAIL);
+    public static void trackerPage() {
+        WebActionManager.waitPresence(LoginConstants.PROJECT_LINK);
     }
 
+    public static void menuUsuario(String text) {
+        click(LoginConstants.AVATAR_BUTTON);
+    }
 
+    public static void linkLogout() {
+        WebActionManager.waitPresence(LoginConstants.LOGOUT_LINK);
+        click(LoginConstants.LOGOUT_LINK);
+    }
+
+    public static void loggedOut() {
+        WebActionManager.waitPresence(LoginConstants.LOGOUT_TEXT);
+    }
 }
