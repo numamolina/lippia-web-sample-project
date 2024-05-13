@@ -1,9 +1,13 @@
 package lippia.web.services;
+
 import java.util.Random;
+
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
+import com.google.cloud.storage.Acl;
 import lippia.web.constants.LoginConstants;
+import lippia.web.constants.ProjectConstants;
 import lippia.web.constants.WorkspacesConstants;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
@@ -45,7 +49,7 @@ public class HomeService extends ActionManager {
     }
 
     public static void trackerPage() {
-        WebActionManager.waitPresence(LoginConstants.PROJECT_LINK);
+        WebActionManager.waitPresence(LoginConstants.PROJECTS_LABEL);
     }
 
     public static void menuUsuario(String text) {
@@ -85,5 +89,42 @@ public class HomeService extends ActionManager {
         String uniqueName = text + "_" + randomNumber;
 //        Establecer el nombre del workspace en el campo de entrada
         setInput(WorkspacesConstants.WORKSPACES_INPUT, uniqueName);
+    }
+
+    public static void newProject() {
+        WebActionManager.waitPresence(ProjectConstants.PROJECT_LINK);
+        WebActionManager.click(ProjectConstants.PROJECT_LINK);
+
+    }
+
+    public static void newProjectClic() {
+        WebActionManager.click(ProjectConstants.NEW_PROJECT_LINK);
+    }
+
+    public static void newProjectModal() {
+        WebActionManager.waitPresence(ProjectConstants.PROJECT_INPUT);
+
+    }
+
+    public static void namingProjects(String nombreProyecto) {
+        Random rand2 = new Random();
+        int randomNumber2 = rand2.nextInt(900) + 100; // Número aleatorio entre 100 y 999
+//        Agregar el número aleatorio al nombre del Proyecto
+        String uniqueName2 = nombreProyecto + "_" + randomNumber2;
+//        Establecer el nombre del proyecto en el campo de entrada
+        setInput(ProjectConstants.PROJECT_INPUT, uniqueName2);
+    }
+
+    public static void creandoProject() {
+        WebActionManager.click(ProjectConstants.PROJECT_CREATE_BUTTON);
+    }
+
+
+    public static void createdProject() {
+        WebActionManager.waitPresence(ProjectConstants.PROJECTS_TITLE);
+    }
+
+    public static void newCreatedWorkspace() {
+        WebActionManager.waitPresence(WorkspacesConstants.WORKSPACES_TITLE);
     }
 }

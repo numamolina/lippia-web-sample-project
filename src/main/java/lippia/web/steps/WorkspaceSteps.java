@@ -36,8 +36,13 @@ public class WorkspaceSteps extends PageSteps {
     }
 
     @And("Completo el campo del modal con el nombre {string}")
-    public void nombrandoNuevoWorkspace(String nuevo) {
-        HomeService.namingWorkspace(nuevo);
+    public void nombrandoNuevoWorkspace(String nombreWorkspace) {
+        HomeService.namingWorkspace(nombreWorkspace);
+    }
+
+    @Then("El espacio se crea y se activa por defecto")
+    public void espacioDeTrabajoCreado() {
+        HomeService.newCreatedWorkspace();
     }
 }
 

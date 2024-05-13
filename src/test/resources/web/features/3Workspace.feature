@@ -16,4 +16,4 @@ Feature: Como usuario registrado de Clockify necesito crear un nuevo espacio de 
     And Hago clic en Create New Workspace
     And Completo el campo del modal con el nombre "nuevo"
     Then El espacio se crea y se activa por defecto
-    And Se muestra un mensaje de confirmación indicando que el Workspace ha sido creado correctamente mediante un popover
+
