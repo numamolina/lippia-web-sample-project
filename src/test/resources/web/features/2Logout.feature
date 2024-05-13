@@ -1,7 +1,7 @@
 @Logout
 Feature: Como usuario de Clockify, necesito hacer un logout correcto
 
-  Background: El usuario se encuentra logueado en el area de Tracker via
+  Background: El usuario se encuentra logueado en el area de Tracker
 
   @Logout
   Scenario: Logout correcto

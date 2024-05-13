@@ -1,9 +1,10 @@
 package lippia.web.services;
-
+import java.util.Random;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.LoginConstants;
+import lippia.web.constants.WorkspacesConstants;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
@@ -58,5 +59,31 @@ public class HomeService extends ActionManager {
 
     public static void loggedOut() {
         WebActionManager.waitPresence(LoginConstants.LOGOUT_TEXT);
+    }
+
+    public static void workspacesMenu() {
+        WebActionManager.click(WorkspacesConstants.MENU_WORKSPACES);
+    }
+
+    public static void manageWorkspaces() {
+        WebActionManager.click(WorkspacesConstants.MANAGE_COMMAND);
+    }
+
+    public static void workspacesPage() {
+        WebActionManager.waitPresence(WorkspacesConstants.WORKSPACES_TITLE);
+    }
+
+    public static void createWorkspace() {
+        WebActionManager.click(WorkspacesConstants.CREATE_WORKSPACES_BUTTON);
+    }
+
+    public static void namingWorkspace(String text) {
+        WebActionManager.waitPresence(WorkspacesConstants.WORKSPACES_INPUT);
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(900) + 100; // Número aleatorio entre 100 y 999
+//        Agregar el número aleatorio al nombre del workspace
+        String uniqueName = text + "_" + randomNumber;
+//        Establecer el nombre del workspace en el campo de entrada
+        setInput(WorkspacesConstants.WORKSPACES_INPUT, uniqueName);
     }
 }
