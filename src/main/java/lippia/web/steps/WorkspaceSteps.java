@@ -25,7 +25,7 @@ public class WorkspaceSteps extends PageSteps {
         HomeService.manageWorkspaces();
     }
 
-    @Then("ingreso a los Worskpases disponibles")
+    @Then("ingreso a los Workspaces disponibles")
     public void worskpasesDisponibles() {
         HomeService.workspacesPage();
     }
