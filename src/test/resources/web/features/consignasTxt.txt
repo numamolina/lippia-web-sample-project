@@ -1,0 +1,8 @@
+Consignas:
+
+Sobre lo trabajado en el TP de Lippia Web, realizar los siguientes agregados y/o modificaciones:
+1. Crear un escenario para realizar un registro de horas trabajadas en la sección correspondiente (Time Tracker o
+Rastreador, según el idioma que estés utilizando), con fecha y hora como datos de entrada.
+2. Realizar una entrada de datos, pero en vez de guardarlo, cancelarlo.
+3. Realizar la modificación de una entrada de datos existente. Considerar todos los datos editables en esa
+modificación.
