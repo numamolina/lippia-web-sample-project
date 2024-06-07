@@ -6,5 +6,7 @@ public class ProjectConstants {
     public static final String PROJECT_INPUT = "xpath://input[@placeholder='Enter project name']";
     public static final String PROJECT_CREATE_BUTTON = "xpath://button[@data-cy='create-project']";
     public static final String PROJECTS_TITLE = "xpath://h1[@class='title-project']";
+
+
 }
 

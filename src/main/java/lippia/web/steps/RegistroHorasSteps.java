@@ -1,7 +1,6 @@
 package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -9,26 +8,34 @@ import lippia.web.services.HomeService;
 
 public class RegistroHorasSteps extends PageSteps {
 
-    @When("hago clic en el campo de título")
-    public void CampoDeTitulo() {
-
+    @When("hago clic en el campo de titulo de la nueva tarea")
+    public void tituloDeLaNuevaTarea() {
+        HomeService.tituloDeTarea();
     }
 
-    @And("completo el título de la tarea con fecha y hora")
-    public void completoElTituloDeLaTareaConFechaYHora() {
+    @And("completo el título de la tarea con la fecha y hora actual")
+    public void tituloFechaYHoraActual() {
+        HomeService.completarCampoTitulo();
     }
 
-    @And("inicio el seguimiento del tiempo")
-    public void inicioElSeguimientoDelTiempo() {
+    @And("hago clic en el modo timer")
+    public void hagoClicEnElModoTimer() {
+        HomeService.modoTimer();
     }
 
-    @And("detengo el seguimiento del tiempo")
-    public void detengoElSeguimientoDelTiempo() {
+    @And("inicio el seguimiento del tiempo haciendo clic en el botón Start")
+    public void inicioBotonStart() {
+        HomeService.botonStart();
     }
 
-    @Then("se crea una tarea con el título y la fecha y hora especificados")
-    public void seCreaUnaTareaConElTituloYLaFechaYHoraEspecificados() {
+    @And("detengo el seguimiento del tiempo haciendo clic en el botón Stop")
+    public void detengoBotonStop() {
+        HomeService.botonStop();
     }
 
 
+    @Then("se crea la tarea satisfactoriamente")
+    public void tareaCreada() {
+        HomeService.avisoToast();
+    }
 }

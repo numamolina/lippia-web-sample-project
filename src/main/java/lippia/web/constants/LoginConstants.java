@@ -1,5 +1,7 @@
 package lippia.web.constants;
 
+import org.openqa.selenium.WebElement;
+
 public class LoginConstants {
 
     public static final String LOGIN_LINK = "xpath://*[@class='btn-login hidden-sm']";
@@ -12,5 +14,5 @@ public class LoginConstants {
     public static final String AVATAR_BUTTON = "xpath://app-user-settings//avatar/div";
     public static final String LOGOUT_LINK = "xpath://*[@id='topbar-menu']/div/div[2]/div/app-user-settings/div/div/div[1]/a/span";
     public static final String LOGOUT_TEXT = "xpath://*[@id='sign-up-wrapper']/span";
-
+    public static final String TRACKER_COMMAND ="xpath://a[@routerlink='/tracker']";
 }

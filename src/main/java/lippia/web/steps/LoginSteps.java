@@ -52,7 +52,7 @@ public class LoginSteps extends PageSteps {
 
     @Then("se muestra la pagina del Tracker")
     public void trackerPage() {
-        HomeService.navegarWebTracker();
+        HomeService.verifyInWebTracker();
     }
 
 

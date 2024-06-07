@@ -40,7 +40,7 @@
 
 		<!-- client project custom properties -->
 		<web-app.url>https://clockify.me/es/</web-app.url>
-		<web-tracker.url>https://app.clockify.me/tracker</web-tracker.url>
+
 
 	</properties>
 	<profiles>

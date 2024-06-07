@@ -5,7 +5,11 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.LoginConstants;
 import lippia.web.constants.ProjectConstants;
+import lippia.web.constants.TareasConstants;
 import lippia.web.constants.WorkspacesConstants;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import java.util.Random;
 
@@ -40,8 +44,8 @@ public class HomeService extends ActionManager {
         click(LoginConstants.LOGIN_MANUAL_BUTTON);
     }
 
-    public static void navegarWebTracker() {
-        navigateTo(PropertyManager.getProperty("web.tracker.url"));
+    public static void verifyInWebTracker() {
+        WebActionManager.waitPresence(LoginConstants.TRACKER_COMMAND);
     }
 
 
@@ -57,8 +61,14 @@ public class HomeService extends ActionManager {
         click(LoginConstants.LOGIN_IN_BUTTON);
     }
 
+    public static void tituloDeTarea() {
+        click(TareasConstants.TITLE_INPUT_FIELD);
+    }
+
+
 //    public static void trackerPage() {
 //        WebActionManager.waitPresence(LoginConstants.PROJECTS_LABEL);
+
 //    }
 
     public static void menuUsuario(String text) {
@@ -137,6 +147,50 @@ public class HomeService extends ActionManager {
         WebActionManager.waitPresence(WorkspacesConstants.WORKSPACES_TITLE);
     }
 
+    public static void completarCampoTitulo() {
 
+        Date fechaActual = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        String fechaFormateada = formato.format(fechaActual);
+        String tituloTareaYFecha = "Tarea Crowdar " + fechaFormateada;
 
+        setInput(TareasConstants.TITLE_INPUT_FIELD, tituloTareaYFecha);
+    }
+
+    public static void modoTimer() {
+        click(TareasConstants.CLOCK_BUTTON);
+    }
+
+    public static void botonStart() {
+        WebActionManager.waitPresence(TareasConstants.START_BUTTON);
+        click(TareasConstants.START_BUTTON);
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void botonStop() {
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        click(TareasConstants.STOP_BUTTON);
+    }
+
+//    public static void tituloEspecificado() {
+//        WebActionManager.waitPresence(ProjectConstants.);
+//    }
+
+    public static void avisoToast() {
+        WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
