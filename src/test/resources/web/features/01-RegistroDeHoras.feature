@@ -24,18 +24,17 @@ Feature: Crear una tarea con fecha y hora en el Tracker
     Then se crea la tarea satisfactoriamente
 
 
+  @cancelandoRegistroDeHoras
+  Scenario: Cancelar el registro una tarea con fecha y hora en el título
+    When hago clic en el campo de titulo de la nueva tarea
+    And completo el título de la tarea con la fecha y hora actual
+    And hago clic en el modo timer
+    And inicio el seguimiento del tiempo haciendo clic en el botón Start
+    And despliego las opciones de tarea
+    And descarto el seguimiento del tiempo con en el botón Discard
+    And confirmo la cancelacion del descarte
+    Then el titulo y el contador se reinician
 
 
-#  //titulo de la tarea
-#  ////input[@name='autocomplete-input' and @placeholder='What have you worked on?']
-#
-#
-#
-#  //menu hamburguesa
-#  //div[contains(@class, 'cl-dropdown-toggle') and @tabindex="0"]/img[@src='assets/ui-icons/menu-dots-vertical.svg']
-#
-#
-#  //discard boton
-#  //a[@class='cl-dropdown-item cl-text-red']
-
-
+#    xpath tiempo en cero
+#  //span[@class='cl-form-control cl-input-time-picker-sum ng-star-inserted']

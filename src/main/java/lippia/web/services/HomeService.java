@@ -7,10 +7,10 @@ import lippia.web.constants.LoginConstants;
 import lippia.web.constants.ProjectConstants;
 import lippia.web.constants.TareasConstants;
 import lippia.web.constants.WorkspacesConstants;
+import org.testng.Assert;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import java.util.Random;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
@@ -67,10 +67,10 @@ public class HomeService extends ActionManager {
 
 
 //    public static void trackerPage() {
+
 //        WebActionManager.waitPresence(LoginConstants.PROJECTS_LABEL);
 
-//    }
-
+    //    }
     public static void menuUsuario(String text) {
         click(LoginConstants.AVATAR_BUTTON);
     }
@@ -171,6 +171,21 @@ public class HomeService extends ActionManager {
         }
     }
 
+    public static void opcionesTarea() {
+        click(TareasConstants.DOT_MENU);
+
+    }
+
+    public static void comandoDiscard() {
+        click(TareasConstants.COMANDO_DISCARD);
+    }
+
+    public static void confirmDiscardOption() {
+        WebActionManager.waitPresence(TareasConstants.CONFIRM_DISCARD);
+        click(TareasConstants.CONFIRM_DISCARD);
+    }
+
+
     public static void botonStop() {
         try {
             Thread.sleep(4000);
@@ -179,10 +194,6 @@ public class HomeService extends ActionManager {
         }
         click(TareasConstants.STOP_BUTTON);
     }
-
-//    public static void tituloEspecificado() {
-//        WebActionManager.waitPresence(ProjectConstants.);
-//    }
 
     public static void avisoToast() {
         WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
@@ -193,4 +204,5 @@ public class HomeService extends ActionManager {
         }
 
     }
+
 }

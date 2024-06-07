@@ -38,4 +38,25 @@ public class RegistroHorasSteps extends PageSteps {
     public void tareaCreada() {
         HomeService.avisoToast();
     }
+
+
+    @And("despliego las opciones de tarea")
+    public void despliegoOpcionesDeTarea() {
+        HomeService.opcionesTarea();
+    }
+
+    @And("descarto el seguimiento del tiempo con en el botón Discard")
+        public void descartarBotonDiscard() {
+        HomeService.comandoDiscard();
+    }
+
+    @And("confirmo la cancelacion del descarte")
+    public void confirmarDescarte() {
+        HomeService.confirmDiscardOption();
+    }
+
+    @Then("el titulo y el contador se reinician")
+    public void elTituloYElContadorCero() {
+        HomeService.avisoToast();
+    }
 }
