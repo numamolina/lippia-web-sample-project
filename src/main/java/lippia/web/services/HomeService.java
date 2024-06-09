@@ -173,16 +173,30 @@ public class HomeService extends ActionManager {
 
     public static void opcionesTarea() {
         click(TareasConstants.DOT_MENU);
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void comandoDiscard() {
         click(TareasConstants.COMANDO_DISCARD);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void confirmDiscardOption() {
         WebActionManager.waitPresence(TareasConstants.CONFIRM_DISCARD);
         click(TareasConstants.CONFIRM_DISCARD);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
