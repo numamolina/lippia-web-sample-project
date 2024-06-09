@@ -34,12 +34,10 @@ public class RegistroHorasSteps extends PageSteps {
         HomeService.botonStop();
     }
 
-
     @Then("se crea la tarea satisfactoriamente")
     public void tareaCreada() {
-        HomeService.avisoToast();
+        TrackerService.avisoToast();
     }
-
 
     @And("despliego las opciones de tarea")
     public void despliegoOpcionesDeTarea() {
@@ -58,6 +56,11 @@ public class RegistroHorasSteps extends PageSteps {
 
     @Then("el titulo y el contador se reinician")
     public void elTituloYElContadorCero() {
-        HomeService.avisoToast();
+        TrackerService.avisoToast();
+    }
+
+    @And("elimino la tarea creada")
+    public void eliminoLaTareaCreada() {
+        TrackerService.eliminarTareaReciente();
     }
 }

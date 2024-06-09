@@ -25,6 +25,6 @@ public class ModificarSteps extends PageSteps {
 
     @Then("se modifica la tarea satisfactoriamente")
     public void tareaModificadaCorrectamente() {
-        TrackerService.tareaModificadaOK();
-    }
+        TrackerService.avisoToast();
+        }
 }

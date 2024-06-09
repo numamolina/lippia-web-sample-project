@@ -41,19 +41,54 @@ public class TrackerService extends ActionManager {
         click(TareasConstants.STOP_INPUT);
         setInput(TareasConstants.STOP_INPUT, "0021");
         WebActionManager.getElement(TareasConstants.STOP_INPUT).sendKeys(Keys.TAB);
+    }
+
+
+    public static void avisoToast() {
+        WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
         try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
+            Thread.sleep(1000);
+        } catch (
+                InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebActionManager.waitPresence(TareasConstants.TASK_TEXT_TOAST_SUCCESS);
+    }
+
+    public static void eliminarTareaReciente() {
+        try {
+            Thread.sleep(3000);
+        } catch (
+                InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebActionManager.waitClickable(TareasConstants.DOT_DELETE_MENU);
+        click(TareasConstants.DOT_DELETE_MENU);
+
+        try {
+            Thread.sleep(1500);
+        } catch (
+                InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebActionManager.waitClickable(TareasConstants.COMANDO_DELETE);
+        click(TareasConstants.COMANDO_DELETE);
+        try {
+            Thread.sleep(1000);
+        } catch (
+                InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebActionManager.waitClickable(TareasConstants.CONFIRM_DELETE);
+        click(TareasConstants.CONFIRM_DELETE);
+        try {
+            Thread.sleep(2000);
+        } catch (
+                InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void tareaModificadaOK() {
-        WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 }

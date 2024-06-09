@@ -22,6 +22,7 @@ Feature: Crear una tarea con fecha y hora en el Tracker
     And inicio el seguimiento del tiempo haciendo clic en el botón Start
     And detengo el seguimiento del tiempo haciendo clic en el botón Stop
     Then se crea la tarea satisfactoriamente
+    And elimino la tarea creada
 
 
   @CancelandoRegistroDeHoras
