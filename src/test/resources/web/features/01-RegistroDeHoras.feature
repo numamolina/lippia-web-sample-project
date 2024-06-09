@@ -34,7 +34,3 @@ Feature: Crear una tarea con fecha y hora en el Tracker
     And descarto el seguimiento del tiempo con en el botón Discard
     And confirmo la cancelacion del descarte
     Then el titulo y el contador se reinician
-
-
-#    xpath tiempo en cero
-#  //span[@class='cl-form-control cl-input-time-picker-sum ng-star-inserted']

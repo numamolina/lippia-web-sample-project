@@ -47,7 +47,7 @@ public class RegistroHorasSteps extends PageSteps {
     }
 
     @And("descarto el seguimiento del tiempo con en el botón Discard")
-        public void descartarBotonDiscard() {
+    public void descartarBotonDiscard() {
         HomeService.comandoDiscard();
     }
 
@@ -60,5 +60,4 @@ public class RegistroHorasSteps extends PageSteps {
     public void elTituloYElContadorCero() {
         HomeService.avisoToast();
     }
-
 }

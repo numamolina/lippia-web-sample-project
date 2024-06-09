@@ -23,8 +23,6 @@ Feature: Modificar una entrada de datos
   @ModificarTareaRegistrada
   Scenario: Modificar una tarea existente en el tracker
     When modifico el titulo de una tarea creada
-#    And agrego un proyecto a la tarea
-#    And nombro el proyecto nuevo
     And modifico la hora de inicio de tarea
     And modifico la hora de fin de la tarea
     Then se modifica la tarea satisfactoriamente

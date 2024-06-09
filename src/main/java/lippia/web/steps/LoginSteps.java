@@ -10,7 +10,6 @@ import lippia.web.services.HomeService;
 
 public class LoginSteps extends PageSteps {
 
-
     @Given("estoy en la pagina de inicio de Clockify")
     public void homePageClockify() {
         HomeService.navegarWeb();
@@ -45,6 +44,7 @@ public class LoginSteps extends PageSteps {
     public void ingresoElUsuario(String user) {
         HomeService.userInput(user);
     }
+
     @And("ingreso la contrasena {}")
     public void ingresoLaContrasena(String pass) {
         HomeService.passInput(pass);
@@ -54,6 +54,4 @@ public class LoginSteps extends PageSteps {
     public void trackerPage() {
         HomeService.verifyInWebTracker();
     }
-
-
 }

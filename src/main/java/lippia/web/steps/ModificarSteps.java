@@ -13,16 +13,6 @@ public class ModificarSteps extends PageSteps {
         TrackerService.modificarTituloTarea();
     }
 
-    @And("agrego un proyecto a la tarea")
-    public void agregoUnProyectoALaTarea() {
-        TrackerService.agregarProyecto();
-    }
-
-//    @And("nombro el proyecto nuevo")
-//    public void nombroElProyectoNuevo() {
-//        TrackerService.nombrarProyecto();
-//    }
-
     @And("modifico la hora de inicio de tarea")
     public void modificoHoraDeInicioDeTarea() {
         TrackerService.modificarHoraInicio();
@@ -31,7 +21,6 @@ public class ModificarSteps extends PageSteps {
     @And("modifico la hora de fin de la tarea")
     public void modificoLaHoraDeFinDeLaTarea() {
         TrackerService.modificarHoraFin();
-
     }
 
     @Then("se modifica la tarea satisfactoriamente")
@@ -39,4 +28,3 @@ public class ModificarSteps extends PageSteps {
         TrackerService.tareaModificadaOK();
     }
 }
-

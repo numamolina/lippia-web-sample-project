@@ -13,10 +13,6 @@ public class TareasConstants {
     public static final String CONTEO_TIEMPO = "xpath://span[@class='cl-form-control cl-input-time-picker-sum ng-star-inserted']";
     //     MODIFICAR TAREA:
     public static final String TITLE_TASK_FIELD = "xpath://div[@class='cl-fake-input-wrapper cl-cut-text cl-w-100']/input[@type='text' and @placeholder='Add description'][1]";
-    public static final String PROJECT_PICKER = "xpath://div[@class='cl-component-divided-left cl-no-divider-border cl-pl-0 cl-dropdown-toggle cl-no-arrow cl-max-width-100'][2]";
-    public static final String LINK_NEW_PROJECT = "xpath://a[@data-cy='new-project']";
-    public static final String PROJECT_INPUT = "xpath://input[@data-cy='project-name']";
-    public static final String CREATE_PROJECT_BUTTON = "xpath://button[@data-cy='create-project']";
     public static final String START_INPUT = "xpath://div[@class='cl-component-divided-left cl-single-date-picker ng-star-inserted']/input-time-ampm[1]/input";
     public static final String STOP_INPUT = "xpath://div[@class='cl-component-divided-left cl-single-date-picker ng-star-inserted']/input-time-ampm[2]/input";
 
