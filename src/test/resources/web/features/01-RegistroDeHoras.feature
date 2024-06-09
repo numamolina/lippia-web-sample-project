@@ -13,7 +13,7 @@ Feature: Crear una tarea con fecha y hora en el Tracker
     And se muestra la pagina del Tracker
 
 
-  @horasTrabajadas
+  @RegistrarHorasTrabajadas
   Scenario: Registrar una tarea con fecha y hora en el título
     When hago clic en el campo de titulo de la nueva tarea
     And completo el título de la tarea con la fecha y hora actual
@@ -24,7 +24,7 @@ Feature: Crear una tarea con fecha y hora en el Tracker
     Then se crea la tarea satisfactoriamente
 
 
-  @cancelandoRegistroDeHoras
+  @CancelandoRegistroDeHoras
   Scenario: Cancelar el registro una tarea con fecha y hora en el título
     When hago clic en el campo de titulo de la nueva tarea
     And completo el título de la tarea con la fecha y hora actual

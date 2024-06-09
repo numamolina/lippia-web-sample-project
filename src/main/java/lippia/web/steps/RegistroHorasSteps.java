@@ -5,6 +5,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import lippia.web.services.HomeService;
+import lippia.web.services.TrackerService;
 
 public class RegistroHorasSteps extends PageSteps {
 
@@ -15,7 +16,7 @@ public class RegistroHorasSteps extends PageSteps {
 
     @And("completo el título de la tarea con la fecha y hora actual")
     public void tituloFechaYHoraActual() {
-        HomeService.completarCampoTitulo();
+        TrackerService.completarCampoTitulo();
     }
 
     @And("hago clic en el modo timer")
@@ -59,4 +60,5 @@ public class RegistroHorasSteps extends PageSteps {
     public void elTituloYElContadorCero() {
         HomeService.avisoToast();
     }
+
 }

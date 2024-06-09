@@ -3,11 +3,11 @@ package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import lippia.web.constants.LoginConstants;
 import lippia.web.constants.ProjectConstants;
 import lippia.web.constants.TareasConstants;
 import lippia.web.constants.WorkspacesConstants;
-import org.testng.Assert;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -66,11 +66,6 @@ public class HomeService extends ActionManager {
     }
 
 
-//    public static void trackerPage() {
-
-//        WebActionManager.waitPresence(LoginConstants.PROJECTS_LABEL);
-
-    //    }
     public static void menuUsuario(String text) {
         click(LoginConstants.AVATAR_BUTTON);
     }
@@ -147,15 +142,7 @@ public class HomeService extends ActionManager {
         WebActionManager.waitPresence(WorkspacesConstants.WORKSPACES_TITLE);
     }
 
-    public static void completarCampoTitulo() {
 
-        Date fechaActual = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        String fechaFormateada = formato.format(fechaActual);
-        String tituloTareaYFecha = "Tarea Crowdar " + fechaFormateada;
-
-        setInput(TareasConstants.TITLE_INPUT_FIELD, tituloTareaYFecha);
-    }
 
     public static void modoTimer() {
         click(TareasConstants.CLOCK_BUTTON);
