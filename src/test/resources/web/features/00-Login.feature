@@ -1,4 +1,3 @@
-@TPFinal
 Feature: Login en el website de Clockify
 
   @login
