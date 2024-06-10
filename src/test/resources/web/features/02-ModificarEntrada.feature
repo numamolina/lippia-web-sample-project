@@ -12,7 +12,7 @@ Feature: Modificar una entrada de datos
     And ingreso la contrasena 123455
     And hago clic en el boton LOG IN
     And se muestra la pagina del Tracker
-#    Creacion de tare anueva
+#    Creacion de tarea nueva
     And hago clic en el campo de titulo de la nueva tarea
     And completo el título de la tarea con la fecha y hora actual
     And hago clic en el modo timer
