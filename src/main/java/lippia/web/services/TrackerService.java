@@ -57,7 +57,7 @@ public class TrackerService extends ActionManager {
 
     public static void eliminarTareaReciente() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(3500);
         } catch (
                 InterruptedException e) {
             throw new RuntimeException(e);
