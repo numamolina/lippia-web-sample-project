@@ -4,14 +4,17 @@ import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import jdk.internal.net.http.common.OperationTrackers;
 import lippia.web.services.HomeService;
 import lippia.web.services.TrackerService;
+
+import javax.sound.midi.Track;
 
 public class RegistroHorasSteps extends PageSteps {
 
     @When("hago clic en el campo de titulo de la nueva tarea")
     public void tituloDeLaNuevaTarea() {
-        HomeService.tituloDeTarea();
+        TrackerService.tituloDeTarea();
     }
 
     @And("completo el título de la tarea con la fecha y hora actual")
@@ -21,17 +24,17 @@ public class RegistroHorasSteps extends PageSteps {
 
     @And("hago clic en el modo timer")
     public void hagoClicEnElModoTimer() {
-        HomeService.modoTimer();
+        TrackerService.modoTimer();
     }
 
     @And("inicio el seguimiento del tiempo haciendo clic en el botón Start")
     public void inicioBotonStart() {
-        HomeService.botonStart();
+        TrackerService.botonStart();
     }
 
     @And("detengo el seguimiento del tiempo haciendo clic en el botón Stop")
     public void detengoBotonStop() {
-        HomeService.botonStop();
+        TrackerService.botonStop();
     }
 
     @Then("se crea la tarea satisfactoriamente")
@@ -41,17 +44,17 @@ public class RegistroHorasSteps extends PageSteps {
 
     @And("despliego las opciones de tarea")
     public void despliegoOpcionesDeTarea() {
-        HomeService.opcionesTarea();
+        TrackerService.opcionesTarea();
     }
 
     @And("descarto el seguimiento del tiempo con en el botón Discard")
     public void descartarBotonDiscard() {
-        HomeService.comandoDiscard();
+        TrackerService.comandoDiscard();
     }
 
     @And("confirmo la cancelacion del descarte")
     public void confirmarDescarte() {
-        HomeService.confirmDiscardOption();
+        TrackerService.confirmDiscardOption();
     }
 
     @Then("el titulo y el contador se reinician")

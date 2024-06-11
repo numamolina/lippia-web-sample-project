@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import lippia.web.services.HomeService;
+import lippia.web.services.TrackerService;
 
 
 public class LoginSteps extends PageSteps {
@@ -52,6 +53,6 @@ public class LoginSteps extends PageSteps {
 
     @Then("se muestra la pagina del Tracker")
     public void trackerPage() {
-        HomeService.verifyInWebTracker();
+        TrackerService.verifyInWebTracker();
     }
 }
