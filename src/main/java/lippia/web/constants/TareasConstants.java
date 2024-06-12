@@ -25,11 +25,5 @@ public class TareasConstants {
     //      MODO MANUAL DE TIMER
     public static final String CLOCK_MANUAL_BUTTON = "xpath://a[@data-cy='manual-mode' and contains(@class, 'cl-timetracker-switch')]";
     public static final String ADD_BUTTON = "xpath://button[contains(text(), 'Add')]";
-    //div[@class='cl-component-divided-left cl-single-date-picker ng-star-inserted']/input-time-ampm[1]/input
-    //div[@class='cl-component-divided-left cl-single-date-picker ng-star-inserted']/input-time-ampm[1]/input)[2]
-
-
-
-
 }
 
