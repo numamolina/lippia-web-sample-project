@@ -1,8 +1,7 @@
 @TPFinal
-Feature: Modificar una entrada de datos
+Feature: Modificar una entrada de datos en modo Manual
 
   Background:
-#    Login
     Given estoy en la pagina de inicio de Clockify
     And hago clic en el enlace Inicia la sesion
     And el sistema muestra las opciones de login
@@ -12,17 +11,17 @@ Feature: Modificar una entrada de datos
     And ingreso la contrasena 123455
     And hago clic en el boton LOG IN
     And se muestra la pagina del Tracker
-#    Creacion de tarea nueva
+ # Creacion de tarea en modo manual
     And hago clic en el campo de titulo de la nueva tarea
     And completo el título de la tarea con la fecha y hora actual
-    And hago clic en el modo timer
-    And inicio el seguimiento del tiempo haciendo clic en el botón Start
-    And detengo el seguimiento del tiempo haciendo clic en el botón Stop
+    And hago clic en el modo manual
+    And inicio el seguimiento de la tarea haciendo clic en el botón Add
     And se crea la tarea satisfactoriamente
 
-  @ModificarTareaRegistrada
-  Scenario: Modificar una tarea existente en el tracker
+  @ModificarTareaManualMode
+  Scenario: Modificar una tarea modo manual existente en el tracker
     When modifico el titulo de una tarea creada
+    And agrego un proyecto nuevo a la tarea existente
     And modifico la hora de inicio de tarea
     And modifico la hora de fin de la tarea
     Then se modifica la tarea satisfactoriamente

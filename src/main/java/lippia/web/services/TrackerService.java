@@ -3,6 +3,7 @@ package lippia.web.services;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.LoginConstants;
+import lippia.web.constants.ProjectConstants;
 import lippia.web.constants.TareasConstants;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -96,7 +97,6 @@ public class TrackerService extends ActionManager {
         WebElement startInputField = WebActionManager.getElement(TareasConstants.START_INPUT);
         startInputField.clear();
         setInput(TareasConstants.START_INPUT, "0010");
-
     }
 
     public static void modificarHoraFin() {
@@ -104,7 +104,6 @@ public class TrackerService extends ActionManager {
         setInput(TareasConstants.STOP_INPUT, "0021");
         WebActionManager.getElement(TareasConstants.STOP_INPUT).sendKeys(Keys.TAB);
     }
-
 
     public static void avisoToastSimple() {
         WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
@@ -132,4 +131,33 @@ public class TrackerService extends ActionManager {
     public static void agregarTareaManual() {
         click(TareasConstants.ADD_BUTTON);
     }
+
+
+    public static void agregarProyectoATareaExistente() {
+        WebActionManager.waitPresence(ProjectConstants.NEW_PROJECT_LINK);
+        WebActionManager.click(ProjectConstants.NEW_PROJECT_LINK);
+
+        Date fechaActual = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM HH:mm:ss");
+        String fechaFormateada = formato.format(fechaActual);
+        String modificacionTareaProyecto = "Modificado " + fechaFormateada;
+
+        setInput(ProjectConstants.PROJECT_INPUT, modificacionTareaProyecto);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        click(ProjectConstants.CREATE_PROJECT_BUTTON);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        click(TareasConstants.CLOCK_BUTTON);
+    }
+
 }

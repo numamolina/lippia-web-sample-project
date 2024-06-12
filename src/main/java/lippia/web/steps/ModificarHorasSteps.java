@@ -27,4 +27,9 @@ public class ModificarHorasSteps extends PageSteps {
     public void tareaModificadaCorrectamente() {
         TrackerService.avisoToastYEliminar();
         }
+
+    @And("agrego un proyecto nuevo a la tarea existente")
+    public void agregoUnProyectoTareaExistente() {
+        TrackerService.agregarProyectoATareaExistente();
+    }
 }
