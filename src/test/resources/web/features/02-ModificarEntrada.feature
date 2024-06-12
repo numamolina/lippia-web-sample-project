@@ -26,6 +26,4 @@ Feature: Modificar una entrada de datos
     And modifico la hora de inicio de tarea
     And modifico la hora de fin de la tarea
     Then se modifica la tarea satisfactoriamente
-    And elimino la tarea creada
-
 

@@ -17,12 +17,11 @@ Feature: Crear una tarea con fecha y hora en el Tracker
   Scenario: Registrar una tarea con fecha y hora en el título
     When hago clic en el campo de titulo de la nueva tarea
     And completo el título de la tarea con la fecha y hora actual
-    And hago clic en el modo timer
     # aseguro que este en modo timer
+    And hago clic en el modo timer
     And inicio el seguimiento del tiempo haciendo clic en el botón Start
     And detengo el seguimiento del tiempo haciendo clic en el botón Stop
-    Then se crea la tarea satisfactoriamente
-    And elimino la tarea creada
+    Then se crea el registro de horas
 
 
   @CancelandoRegistroDeHoras

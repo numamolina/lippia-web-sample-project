@@ -4,11 +4,8 @@ import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import jdk.internal.net.http.common.OperationTrackers;
-import lippia.web.services.HomeService;
+import lippia.web.services.AfterService;
 import lippia.web.services.TrackerService;
-
-import javax.sound.midi.Track;
 
 public class RegistroHorasSteps extends PageSteps {
 
@@ -39,7 +36,12 @@ public class RegistroHorasSteps extends PageSteps {
 
     @Then("se crea la tarea satisfactoriamente")
     public void tareaCreada() {
-        TrackerService.avisoToast();
+        TrackerService.avisoToastSimple();
+    }
+
+    @Then("se crea el registro de horas")
+    public void registroDeHorasCreado() {
+        TrackerService.avisoToastYEliminar();
     }
 
     @And("despliego las opciones de tarea")
@@ -59,11 +61,21 @@ public class RegistroHorasSteps extends PageSteps {
 
     @Then("el titulo y el contador se reinician")
     public void elTituloYElContadorCero() {
-        TrackerService.avisoToast();
+        TrackerService.avisoToastSimple();
     }
 
     @And("elimino la tarea creada")
     public void eliminoLaTareaCreada() {
-        TrackerService.eliminarTareaReciente();
+        AfterService.eliminarTareaReciente();
+    }
+
+    @And("hago clic en el modo manual")
+    public void timerModoManual() {
+        TrackerService.modoManualTiempo();
+    }
+
+    @And("inicio el seguimiento de la tarea haciendo clic en el botón Add")
+        public void inicioSeguimientoManual() {
+        TrackerService.agregarTareaManual();
     }
 }

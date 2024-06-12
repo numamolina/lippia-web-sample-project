@@ -1,5 +1,7 @@
 package lippia.web.constants;
 
+import org.openqa.selenium.WebElement;
+
 public class TareasConstants {
     public static final String TITLE_INPUT_FIELD = "xpath://input[@name='autocomplete-input']";
     public static final String CLOCK_BUTTON = "xpath://a[@data-cy='timer-mode' and contains(@class, 'cl-timetracker-switch')]";
@@ -20,6 +22,9 @@ public class TareasConstants {
     public static final String DOT_DELETE_MENU = "xpath://div[@dropdownkeybutton and @class='pointer cl-non-selectable cl-component-divided-left cl-d-flex cl-dropdown-toggle cl-no-arrow']";
     public static final String COMANDO_DELETE = "xpath://a[@data-cy='delete-button']";
     public static final String CONFIRM_DELETE = "xpath://button[@class='cl-btn cl-btn-danger']";
+    //      MODO MANUAL DE TIMER
+    public static final String CLOCK_MANUAL_BUTTON = "xpath://a[@data-cy='manual-mode' and contains(@class, 'cl-timetracker-switch')]";
+    public static final String ADD_BUTTON = "xpath://button[contains(text(), 'Add')]";
 
 }
 

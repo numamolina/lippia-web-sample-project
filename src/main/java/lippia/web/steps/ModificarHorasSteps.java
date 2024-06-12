@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.services.TrackerService;
 
-public class ModificarSteps extends PageSteps {
+public class ModificarHorasSteps extends PageSteps {
 
     @When("modifico el titulo de una tarea creada")
     public void modificarTituloDeTarea() {
@@ -25,6 +25,6 @@ public class ModificarSteps extends PageSteps {
 
     @Then("se modifica la tarea satisfactoriamente")
     public void tareaModificadaCorrectamente() {
-        TrackerService.avisoToast();
+        TrackerService.avisoToastYEliminar();
         }
 }

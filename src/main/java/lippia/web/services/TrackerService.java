@@ -78,6 +78,7 @@ public class TrackerService extends ActionManager {
         String fechaFormateada = formato.format(fechaActual);
         String tituloTareaYFecha = "Tarea Crowdar " + fechaFormateada;
         setInput(TareasConstants.TITLE_INPUT_FIELD, tituloTareaYFecha);
+
     }
 
     public static void modificarTituloTarea() {
@@ -95,6 +96,7 @@ public class TrackerService extends ActionManager {
         WebElement startInputField = WebActionManager.getElement(TareasConstants.START_INPUT);
         startInputField.clear();
         setInput(TareasConstants.START_INPUT, "0010");
+
     }
 
     public static void modificarHoraFin() {
@@ -104,7 +106,7 @@ public class TrackerService extends ActionManager {
     }
 
 
-    public static void avisoToast() {
+    public static void avisoToastSimple() {
         WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
         try {
             Thread.sleep(1000);
@@ -115,40 +117,19 @@ public class TrackerService extends ActionManager {
         WebActionManager.waitPresence(TareasConstants.TASK_TEXT_TOAST_SUCCESS);
     }
 
-    public static void eliminarTareaReciente() {
-        try {
-            Thread.sleep(3500);
-        } catch (
-                InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        WebActionManager.waitClickable(TareasConstants.DOT_DELETE_MENU);
-        click(TareasConstants.DOT_DELETE_MENU);
+    public static void avisoToastYEliminar() {
+        WebActionManager.waitPresence(TareasConstants.TASK_TOAST);
+        WebActionManager.waitPresence(TareasConstants.TASK_TEXT_TOAST_SUCCESS);
 
-        try {
-            Thread.sleep(1500);
-        } catch (
-                InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        WebActionManager.waitClickable(TareasConstants.COMANDO_DELETE);
-        click(TareasConstants.COMANDO_DELETE);
-        try {
-            Thread.sleep(1000);
-        } catch (
-                InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        WebActionManager.waitClickable(TareasConstants.CONFIRM_DELETE);
-        click(TareasConstants.CONFIRM_DELETE);
-        try {
-            Thread.sleep(2000);
-        } catch (
-                InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        AfterService.eliminarTareaReciente();
     }
 
+    public static void modoManualTiempo() {
+        click(TareasConstants.CLOCK_MANUAL_BUTTON);
 
+    }
+
+    public static void agregarTareaManual() {
+        click(TareasConstants.ADD_BUTTON);
+    }
 }
